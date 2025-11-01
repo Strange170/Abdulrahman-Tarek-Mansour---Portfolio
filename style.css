@@ -103,7 +103,7 @@
             white-space: nowrap;
         }
         .section-heading::before {
-            content: '0' counter(section) '.';
+            content: '';
             counter-increment: section;
             margin-right: 10px;
             font-family: var(--font-sans);
@@ -186,7 +186,7 @@
         }
         
         .nav-links a::before {
-            content: '0' counter(nav-item) '.';
+            content: '';
             margin-right: 5px;
             color: var(--teal);
             font-size: var(--fz-xs);
@@ -241,11 +241,14 @@
             color: var(--lightest-slate);
         }
         .mobile-nav-links a::before {
-            content: '0' counter(nav-item) '.';
+            content: '';
             display: block;
             color: var(--teal);
             font-size: var(--fz-sm);
             margin-bottom: 5px;
+        }
+        .mobile-nav a:hover {
+            color: var(--teal);
         }
 
         /* Hamburger Animation */
@@ -672,7 +675,31 @@
         #form-message.is-visible {
             opacity: 1;
         }
-        
+        /* === NEW CSS FOR CONTACT BUTTONS === */
+        .contact-links-container {
+            display: flex;
+            flex-direction: column; /* Stack them vertically */
+            align-items: center;
+            gap: 20px; /* Space between buttons */
+            margin-top: 40px;
+        }
+
+        .contact-btn {
+            display: inline-flex; /* To align icon and text */
+            align-items: center;
+            justify-content: center;
+            gap: 12px; /* Space between icon and text */
+            width: 100%;
+            max-width: 320px; /* Set a max-width */
+            min-height: 58px; /* Ensure same height */
+        }
+
+        .contact-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor; /* Make icon color match text color (teal) */
+        }
+        /* === END NEW CSS === */
         .contact-socials {
             display: none; /* Hide on desktop, already have sidebars */
             margin-top: 40px;
